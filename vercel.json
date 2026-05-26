@@ -2,11 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "http://15.164.212.158/api/:path*"
-    },
-    {
-      "source": "/ws/:path*",
-      "destination": "http://15.164.212.158/ws/:path*"
+      "destination": "https://talkit4242.duckdns.org/api/:path*"
     }
   ]
 }

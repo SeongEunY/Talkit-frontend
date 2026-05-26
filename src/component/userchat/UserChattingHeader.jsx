@@ -9,24 +9,31 @@ const HelpModal = ({ onClose }) => {
         <h2 className="text-lg font-bold text-gray-800 mb-4">💬 채팅 도움말</h2>
         <ul className="space-y-3 text-sm text-gray-600">
           <li className="flex gap-2">
-            <span className="text-blue-400 font-bold shrink-0">01.</span>{""}
+            <span className="text-blue-400 font-bold shrink-0">01.</span>
+            {""}
             매칭된 상대방과 정해진 횟수만큼 대화를 나눌 수 있어요. (기본 40턴)
           </li>
           <li className="flex gap-2">
-            <span className="text-blue-400 font-bold shrink-0">02.</span>{""}
-            연속으로 3번까지만 메시지를 보낼 수 있어요. 상대방의 답변을 기다려주세요.
+            <span className="text-blue-400 font-bold shrink-0">02.</span>
+            {""}
+            연속으로 3번까지만 메시지를 보낼 수 있어요. 상대방의 답변을
+            기다려주세요.
           </li>
           <li className="flex gap-2">
-            <span className="text-blue-400 font-bold shrink-0">03.</span>{""}
+            <span className="text-blue-400 font-bold shrink-0">03.</span>
+            {""}
             대화가 끝나면 연장 여부를 선택할 수 있어요. (25턴)
           </li>
           <li className="flex gap-2">
-            <span className="text-blue-400 font-bold shrink-0">04.</span>{""}
-            🎯 키워드 미션을 대화 중 자연스럽게 사용해보세요! 일정 횟수 성공 시 뱃지를 획득해요.
+            <span className="text-blue-400 font-bold shrink-0">04.</span>
+            {""}
+            🎯 키워드 미션을 대화 중 자연스럽게 사용해보세요! 일정 횟수 성공 시
+            뱃지를 획득해요.
           </li>
           <li className="flex gap-2">
-            <span className="text-blue-400 font-bold shrink-0">05.</span>{""}
-            🎖️ 채팅 후기를 통해서도 뱃지를 획득할 수 있어요. 
+            <span className="text-blue-400 font-bold shrink-0">05.</span>
+            {""}
+            🎖️ 채팅 후기를 통해서도 뱃지를 획득할 수 있어요.
           </li>
         </ul>
         <button
@@ -45,9 +52,12 @@ const ForceEndModal = ({ onConfirm, onCancel }) => {
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
       <div className="bg-white rounded-2xl shadow-xl w-[90%] max-w-sm p-6">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">채팅을 종료할까요?</h2>
+        <h2 className="text-lg font-bold text-gray-800 mb-2">
+          채팅을 종료할까요?
+        </h2>
         <p className="text-sm text-gray-500 mb-6">
-          대화를 중간에 강제 종료하면 온도가 3도 감소합니다. 정말 종료하시겠어요?
+          대화를 중간에 강제 종료하면 온도가 3도 감소합니다. 정말
+          종료하시겠어요?
         </p>
         <div className="flex gap-3">
           <button
@@ -88,7 +98,9 @@ const UserChattingHeader = ({ topic, onForceEnd }) => {
             <Hash className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
           <div>
-            <p className="text-[10px] sm:text-xs text-gray-400">현재 채팅 주제</p>
+            <p className="text-[10px] sm:text-xs text-gray-400">
+              현재 채팅 주제
+            </p>
             <h3 className="font-bold text-sm sm:text-base text-gray-800 leading-tight">
               {topic || "주제 없음"}
             </h3>

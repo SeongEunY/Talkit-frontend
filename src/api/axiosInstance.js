@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { ERROR_ROUTES } from '../constants/route';
+import axios from "axios";
+import { ERROR_ROUTES } from "../constants/route";
 
 let store = null;
 let logoutAction = null;
@@ -17,7 +17,7 @@ const axiosInstance = axios.create({
 });
 
 const hasRefreshToken = () => {
-  return document.cookie.split('; ').some((row) => row.startsWith('refresh'));
+  return document.cookie.split("; ").some((row) => row.startsWith("refresh"));
 };
 
 const dispatchLogout = () => {
@@ -33,8 +33,8 @@ const onRefreshed = () => {
 };
 
 const removeAccessAndRefreshFromCookie = () => {
-  document.cookie = 'refresh=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-  document.cookie = 'access=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  document.cookie = "refresh=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  document.cookie = "access=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 };
 
 // 토큰 재발급 실패 시 대기 중인 요청들을 reject
@@ -46,11 +46,11 @@ const onRefreshError = (error) => {
 // 요청 인터셉터
 axiosInstance.interceptors.request.use(
   async (config) => {
-    if (!config.url?.includes('/api/auth/reissue')) {
+    if (!config.url?.includes("/api/auth/reissue")) {
       const token = document.cookie
-        .split('; ')
-        .find((row) => row.startsWith('access'))
-        ?.split('=')[1];
+        .split("; ")
+        .find((row) => row.startsWith("access"))
+        ?.split("=")[1];
 
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
@@ -71,8 +71,9 @@ axiosInstance.interceptors.response.use(
 
     if (error.response?.status === 401 && !originalRequest._retry) {
       if (!hasRefreshToken()) {
-        if (!Object.values(ERROR_ROUTES).includes(window.location.pathname)) {
-          window.location.href = '/';
+        const publicPaths = ["/", "/login", "/signup"];
+        if (!publicPaths.includes(window.location.pathname)) {
+          window.location.href = "/";
         }
         return Promise.reject(error);
       }
@@ -83,7 +84,7 @@ axiosInstance.interceptors.response.use(
         isRefreshing = true;
 
         try {
-          await axiosInstance.post('/api/auth/reissue');
+          await axiosInstance.post("/api/auth/reissue");
           isRefreshing = false;
           onRefreshed();
           return axiosInstance(originalRequest);
@@ -94,7 +95,9 @@ axiosInstance.interceptors.response.use(
             dispatchLogout();
             removeAccessAndRefreshFromCookie();
 
-            if (!Object.values(ERROR_ROUTES).includes(window.location.pathname)) {
+            if (
+              !Object.values(ERROR_ROUTES).includes(window.location.pathname)
+            ) {
               window.location.href = ERROR_ROUTES.LOGIN_EXPIRED;
             }
           }

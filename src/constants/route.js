@@ -2,6 +2,9 @@ export const ERROR_ROUTES = Object.freeze({
   UNAUTHENTICATED: '/unauthenticated',
   LOGIN_EXPIRED: '/login/expired',
   ERROR: '/error',
+  HOME: '/',
+  LOGIN: '/login',
+  SIGNUP: '/signup'
 });
 
 export const redirectToLoginExpired = () => {

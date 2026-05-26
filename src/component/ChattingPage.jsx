@@ -277,7 +277,7 @@ const Chattingpage = () => {
   };
 
   const connect = (id) => {
-    const socket = new SockJS("http://15.164.212.158:8080/ws");
+    const socket = new SockJS("/ws");
     stompClient.current = new Client({
       webSocketFactory: () => socket,
       onConnect: () => {

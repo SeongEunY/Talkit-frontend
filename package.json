@@ -11,21 +11,16 @@
   },
   "dependencies": {
     "@stomp/stompjs": "^7.3.0",
-    "axios": "^1.13.2",
+    "axios": "^1.16.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.546.0",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-<<<<<<< HEAD
-    "react-router-dom": "^7.9.5",
-    "recharts": "^3.3.0",
-=======
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
     "recharts": "^3.3.0",
     "sockjs-client": "^1.6.1",
->>>>>>> yse
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

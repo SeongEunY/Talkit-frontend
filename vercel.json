@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://talkit4242.duckdns.org/api/:path*"
+    },
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
     }
   ]
 }

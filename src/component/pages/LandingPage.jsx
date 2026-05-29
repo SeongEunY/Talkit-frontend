@@ -10,7 +10,7 @@ export default function App() {
   const navigate = useNavigate();
 
   const features = [
-    { icon: "💬", title: "10턴 익명 채팅", desc: "부담 없는 짧은 대화로 말문을 틔워보세요." },
+    { icon: "💬", title: "40턴 익명 채팅", desc: "부담 없는 짧은 대화로 말문을 틔워보세요." },
     { icon: "🎯", title: "미션 & 키워드", desc: "매일 새로운 미션과 키워드로 연습해요." },
     { icon: "💝", title: "감정 태그 교환", desc: "대화 후 감정을 나누며 공감해요." },
     { icon: "🤖", title: "AI 피드백", desc: "AI가 맞춤 피드백으로 실력을 키워줘요." },
@@ -50,7 +50,7 @@ export default function App() {
         </h1>
 
         <p className="text-gray-600 mb-10">
-          10턴의 짧은 익명 대화, 매일 가벼운 말문 트기
+          40턴의 익명 대화, 매일 가벼운 말문 트기
         </p>
         <div className="flex justify-center">
           <button

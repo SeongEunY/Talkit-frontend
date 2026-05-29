@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 import axiosInstance from "../../api/axiosInstance";
 import { Home, MessageCircle, BarChart3, User, Play, Search, Bell, Award, Calendar, Sparkles } from 'lucide-react';
 
@@ -66,6 +67,8 @@ const SaisaiHome = () => {
     setCompletedGoals(newCompletedGoals);
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-50">
 
@@ -76,7 +79,9 @@ const SaisaiHome = () => {
             <h2 className="text-4xl font-bold mb-2">{timeOfDay}의 대화를</h2>
             <h2 className="text-4xl font-bold mb-6">시작해보세요</h2>
             <p className="text-purple-100 mb-8 text-lg">새로운 사람들과 의미있는 대화를 나눠보세요</p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 transition-colors">
+            <button 
+            onClick={() => navigate("/chatting")}
+            className="bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 transition-colors">
               <div className="flex items-center space-x-2">
                 <Play size={20} />
                 <span>지금 말잇기 시작</span>

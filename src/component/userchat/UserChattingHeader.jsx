@@ -22,7 +22,7 @@ const HelpModal = ({ onClose }) => {
           <li className="flex gap-2">
             <span className="text-blue-400 font-bold shrink-0">03.</span>
             {""}
-            대화가 끝나면 연장 여부를 선택할 수 있어요. (25턴)
+            대화가 끝나면 연장 여부를 선택할 수 있어요. (23턴)
           </li>
           <li className="flex gap-2">
             <span className="text-blue-400 font-bold shrink-0">04.</span>

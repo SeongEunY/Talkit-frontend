@@ -108,7 +108,7 @@ const Chattingpage = () => {
           200,
         );
         setTimeout(() => {
-          if (room.pendingForced || currentMax > 3) {
+          if (room.pendingForced || currentMax > 40) {
             setShowFeedbackModal(true);
           } else {
             setShowExtendModal(true);
@@ -278,6 +278,7 @@ const Chattingpage = () => {
 
   const connect = (id) => {
     const socket = new SockJS("https://talkit4242.duckdns.org/ws");
+    //const socket = new SockJS("http://localhost:8080/ws");
     stompClient.current = new Client({
       webSocketFactory: () => socket,
       onConnect: () => {
@@ -325,8 +326,7 @@ const Chattingpage = () => {
                 200,
               );
               setTimeout(() => {
-                if (data.forced || currentMax > 3) {
-                  setShowExtendModal(false);
+                if (data.forced || currentMax > 40) {
                   setShowFeedbackModal(true);
                 } else {
                   setShowExtendModal(true);
@@ -491,7 +491,6 @@ const Chattingpage = () => {
       if (data.maxTurns) setMaxTurns(data.maxTurns);
       if (data.isOvered) {
         setIsMatched(false);
-        setShowFeedbackModal(true);
       } else {
         setIsMatched(true);
       }
